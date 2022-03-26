@@ -11,6 +11,8 @@
     <!--子模块-->
     <modules>
         <module>cloudalibaba-provider-payment9001</module>
+        <module>cloudalibaba-provider-payment9002</module>
+        <module>cloudalibaba-consumer-order83</module>
     </modules>
 
     <!--统一管理jar包版本-->
@@ -27,7 +29,7 @@
         <mybatis-plus-generator.version>3.5.1</mybatis-plus-generator.version>
     </properties>
 
-    <!--父工程默认不引入，作用：子模块按需引入不需要填写version版本号和groupId-->
+    <!--子模块默认不引入，作用：子模块按需引入不需要填写version版本号和groupId-->
     <dependencyManagement>
         <dependencies>
             <!--springboot-->
