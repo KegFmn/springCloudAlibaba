@@ -13,10 +13,10 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @EnableFeignClients
 @EnableDiscoveryClient
 @SpringBootApplication
-public class OrderNacosMain83 {
+public class OrderMain83 {
 
     public static void main(String[] args) {
-        SpringApplication.run(OrderNacosMain83.class, args);
+        SpringApplication.run(OrderMain83.class, args);
     }
 
 }

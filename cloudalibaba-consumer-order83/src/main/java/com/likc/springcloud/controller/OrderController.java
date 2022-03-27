@@ -17,7 +17,7 @@ import javax.annotation.Resource;
  * @description
  */
 @RestController
-public class OrderNacosController {
+public class OrderController {
 
     @Autowired
     private Client client;
