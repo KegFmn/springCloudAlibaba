@@ -2,6 +2,8 @@ server:
   port: 84
 
 spring:
+  profiles:
+    active: dev
   application:
     name: nacos-order-consumer
   cloud:

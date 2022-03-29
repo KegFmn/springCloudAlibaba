@@ -11,7 +11,7 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
 
-  <artifactId>cloudalibaba-sentinel-client8401</artifactId>
+  <artifactId>cloudalibaba-sentinel-service8401</artifactId>
 
   <dependencies>
     <!--springcloud alibaba nacos-->
