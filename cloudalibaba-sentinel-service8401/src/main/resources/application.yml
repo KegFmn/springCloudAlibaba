@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: sentinel-client
+    name: sentinel-service
   cloud:
     nacos:
       discovery:
@@ -12,6 +12,14 @@ spring:
       transport:
         dashboard: localhost:8080 # sentinel dashboard地址
         port: 8719 # 默认8719端口，如被占用会向上+1直到找到空闲端口
+      datasource: # sentinel 持久化，需要想去网页添加规则
+        ds1:
+          nacos:
+            server-addr: localhost:8848
+            dataId: sentinel-service
+            groupId: DEFAULT_GROUP
+            data-type: json
+            rule-type: flow
 
 management:
   endpoints:
@@ -20,4 +28,6 @@ management:
         include: '*'
 
 
-
+feign:
+  sentinel:
+    enabled: true

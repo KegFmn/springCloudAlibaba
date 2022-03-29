@@ -48,7 +48,7 @@ public class FlowLimitController {
      * @return
      */
     @GetMapping("/testD")
-    @SentinelResource(value = "testD", blockHandlerClass = CustomerBlockHandler.class, blockHandler = "handlerException1")
+    @SentinelResource(value = "testD", blockHandlerClass = CustomerBlockHandler.class, blockHandler = "handlerException1") // 资源名按照value来
     public String testD(){
         return "---------testB";
     }
