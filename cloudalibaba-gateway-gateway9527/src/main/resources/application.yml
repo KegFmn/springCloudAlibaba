@@ -11,7 +11,7 @@ spring:
       discovery:
         server-addr: localhost:8848 #nacos的ip地址
         namespace: 8b33c3f1-637c-4c73-9491-ae4e3b399aa1
-        group: DEFAULT_GROUP
+        group: GATEWAY_GROUP
     sentinel:
       transport:
         dashboard: localhost:8080 # sentinel dashboard地址
@@ -20,7 +20,7 @@ spring:
     gateway:
       routes:
         - id: payment_routh1 # 唯一就行
-          uri: lb://nacos-provider # 网关帮我们转发的真实url
+          uri: lb://nacos-provider # 网关帮我们转发的真实url，lb负载均衡，//后边服务名
           predicates:
             - Path=/payment/nacos/** # 匹配规则，Path首字母要大写
 
