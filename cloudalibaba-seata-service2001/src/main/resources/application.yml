@@ -50,7 +50,7 @@ feign:
     enabled: true
   client:
     config:
-      default:
+      default: # default是全局默认的意思，单独设置可以加上服务名
         connect-timeout: 1000
         read-timeout: 2000
 
