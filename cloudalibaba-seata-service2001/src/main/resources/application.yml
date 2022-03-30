@@ -11,6 +11,8 @@ spring:
     nacos:
       discovery:
         server-addr: localhost:8848 #nacos的ip地址
+        namespace: 8b33c3f1-637c-4c73-9491-ae4e3b399aa1
+        group: DEFAULT_GROUP
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/seata_order

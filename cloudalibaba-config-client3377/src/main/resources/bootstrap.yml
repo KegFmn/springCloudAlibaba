@@ -8,6 +8,8 @@ spring:
     nacos:
       discovery:
         server-addr: localhost:8848 #Nacos服务注册中心地址
+        namespace: 8b33c3f1-637c-4c73-9491-ae4e3b399aa1
+        group: DEFAULT_GROUP
       config:
         server-addr: localhost:8848 #Nacos配置中心地址
         file-extension: yaml
