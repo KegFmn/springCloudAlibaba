@@ -24,6 +24,11 @@
       <groupId>com.alibaba.cloud</groupId>
       <artifactId>spring-cloud-starter-alibaba-seata</artifactId>
     </dependency>
+    <!--springcloud alibaba sentinel-->
+    <dependency>
+      <groupId>com.alibaba.cloud</groupId>
+      <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+    </dependency>
     <!--springcloud openfeign-->
     <dependency>
       <groupId>org.springframework.cloud</groupId>
