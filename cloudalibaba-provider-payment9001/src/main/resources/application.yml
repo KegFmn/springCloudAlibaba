@@ -5,11 +5,18 @@ spring:
   profiles:
     active: dev
   application:
-    name: nacos-payment-provider
+    name: nacos-provider
   cloud:
     nacos:
       discovery:
         server-addr: localhost:8848 #nacos的ip地址
+        namespace: 8b33c3f1-637c-4c73-9491-ae4e3b399aa1
+        group: DEFAULT_GROUP
+    sentinel:
+      transport:
+        dashboard: localhost:8080 # sentinel dashboard地址
+        port: 8719 # 默认8719端口，如被占用会向上+1直到找到空闲端口
+      eager: true
 
 management:
   endpoints:
