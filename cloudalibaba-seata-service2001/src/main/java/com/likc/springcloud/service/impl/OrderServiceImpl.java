@@ -6,6 +6,7 @@ import com.likc.springcloud.mapper.OrderMapper;
 import com.likc.springcloud.service.AccountService;
 import com.likc.springcloud.service.OrderService;
 import com.likc.springcloud.service.StorageService;
+import io.seata.spring.annotation.GlobalTransactional;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -32,7 +33,13 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
     @Resource
     private StorageService storageService;
 
+    /**
+     *  服务调用步骤：2001服务order先初始化订单（状态为0：未完成）——2002服务storage扣减库存——2003服务扣减余额——回到2001服务修改订单状态
+     *  开启全局事务将整个微服务调用链当成一个事务处理，使其具备原子性
+     * @param order
+     */
     @Override
+    @GlobalTransactional(name = "order-storage-account", rollbackFor = Exception.class) // name唯一就行，rollbackfor抛出的异常不要捕捉
     public void create(Order order) {
         log.info("---------------开始新建订单");
         orderMapper.create(order);
