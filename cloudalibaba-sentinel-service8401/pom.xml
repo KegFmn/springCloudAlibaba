@@ -37,7 +37,7 @@
     <!--springcloud loadbalancer-->
     <dependency>
       <groupId>org.springframework.cloud</groupId>
-      <artifactId>spring-cloud-loadbalancer</artifactId>
+      <artifactId>spring-cloud-starter-loadbalancer</artifactId>
     </dependency>
     <!--springboot web组件-->
     <dependency>
