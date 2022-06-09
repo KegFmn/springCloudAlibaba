@@ -18,10 +18,10 @@ spring:
         port: 8719 # 默认8719端口，如被占用会向上+1直到找到空闲端口
       eager: true
     stream:
-      binders:
-        defaultRabbit:
-          type: rabbit
-          environment:
+      binders: #在此处配置要绑定的rabbitmq的服务信息
+        defaultRabbit: #表示定义的名称，用于binding整合, defaultRabbit这个名字自己定义，是一个变量
+          type: rabbit #消息组件类型
+          environment: #设置rabbitmq的相关环境配置
             spring:
               rabbitmq:
                 host: localhost
@@ -32,6 +32,7 @@ spring:
         sms-out-0: # 自定义生产者通道名称
           destination: sms-topic # 自定义Exchange交换机名称，生产者和消费者需要配置同一个Exchange
           content-type: application/json # 消息类型
+          binder: defaultRabbit # 设置要绑定的消息服务的具体设置
 
 management:
   endpoints:
